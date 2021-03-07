@@ -76,7 +76,9 @@
 
 		
 			})
-
+app.get('/auth', (req, res) => {
+	res.sendFile(require('path').join(__dirname, 'auth.html'))
+})
 	app.all("*", (req, res) => res.send({
 		status: "error",
 		code: 404,
