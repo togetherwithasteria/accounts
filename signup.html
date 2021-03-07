@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>hCaptcha Demo</title>
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+    	margin: 0 0 0 0;
+    }
+    
+    	#signup-box-container {
+    	
+    		display: flex;
+    		background-color: black;
+    		align-items: center;
+    		justify-content: center;
+    		height: 100%;
+    		width: 100vw;
+    	}
+    	
+    	#signup-box {
+    		width: 80vw;
+    		height: 80%;
+    		background-color: white;
+    	}
+    	
+    	#signup-box form {
+    		position: relative;
+    		display: flex;
+    		align-items: center;
+    		flex-direction: column;
+    		margin-top: 40px;
+    	}
+    	
+    	#signup-box form input  {
+    		width: calc(100% - 40px);
+    		height: 40px;
+    		margin-top: 10px;
+    		border-radius: 5px;
+    		border: solid 1px;
+    		
+    	}
+    	
+    	
+    	#signup-box form .h-captcha {
+    		margin-top: 20px;
+    	}
+    	
+    	#signup-box form input[type="submit"] {
+    		background-color: white;
+    		color: black;
+    		margin-top: 0;
+    	}
+    	
+    	
+    	#signup-box form input[type="submit"]:hover {
+    		border: solid 2px;
+    	}
+    	
+    	</style>
+  </head>
+  <body>
+  	<div id="signup-box-container">
+  	<div id="signup-box">
+  		
+  		<div id="signup-box-title"></div>
+    <form action="" method="POST">
+    	<input type="text" name="username" placeholder=" Username"/>
+      <input type="text" name="email" placeholder=" Email" />
+      <input type="password" name="password" placeholder=" Password" />
+<div class="h-captcha" data-sitekey="c63b68f7-ec57-4d5f-9eb1-81c20b960f62"></div>
+      <br />
+      <input type="submit" value="Submit" />
+      
+    </form>
+    </div>
+    </div>
+  </body>
+</html>
