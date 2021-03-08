@@ -1,7 +1,7 @@
 (async function() {
 
 	process.on("error", (error) => console.error(error));
-
+        const path = require("path")
 	const express = require("express");
 	const MongoClient = require('mongodb').MongoClient;
 	const axios = require("axios");
@@ -15,14 +15,16 @@
 	await client.connect();
 
 	const accounts = client.db("main").collection("accounts");
-	/*function forceHTTPS(req, res, next) {
-		// For Ngrok or Heroku
-		if (!req.secure || req.get("x-forwarded-proto") !== "https") return res.redirect(`https://${req.get("host")}${req.originalUrl}`);
+function requireHTTPS(req, res, next) {
+  // The 'x-forwarded-proto' check is for Heroku
+  if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== "development") {
+    return res.redirect('https://' + req.get('host') + req.url);
+  }
+  next();
+}
+	
 
-		return next();
-	}
-
-	// Needed to identigy spammers
+	// Needed to identify spammers
 	function handleError(req, res, next){
 		try {
 
@@ -37,13 +39,13 @@
 		}
 	}
 	function logIP(req, res, next) {
-		console.log(`${req.ip} - ${req.method} ${req.url}`);
+		console.log(`${req.ip} - ${Date.now()} - ${req.method} ${req.url}`);
 		return next();
 	}
 
-	app.use(forceHTTPS);
+	app.use(requireHTTPS);
 	app.use(logIP);
-*/
+
 	app.get("/callback/github/redirect-to/:url/", async (req, res) => {
 		try {
 		const accessToken = await axios({
@@ -77,8 +79,10 @@
 		
 			})
 app.get('/signup', (req, res) => {
-	res.sendFile(require('path').join(__dirname, 'signup.html'))
+	res.sendFile(path.join(__dirname, 'signup.html'))
 })
+
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 	app.all("*", (req, res) => res.send({
 		status: "error",
 		code: 404,

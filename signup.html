@@ -11,16 +11,19 @@
     	#signup-box-container {
     	
     		display: flex;
-    		background-color: black;
+    		background-image: url("/assets/chernobyl.jpg");
+    		background-size: cover;
     		align-items: center;
     		justify-content: center;
     		height: 100%;
     		width: 100vw;
+    		padding-top: 10%;
+    		padding-bottom: 10%;
     	}
     	
     	#signup-box {
     		width: 80vw;
-    		height: 80%;
+    		height: auto;
     		background-color: white;
     	}
     	
@@ -38,42 +41,75 @@
     		margin-top: 10px;
     		border-radius: 5px;
     		border: solid 1px;
+    		background-color: white;
     		
     	}
     	
+    	#tos-privacy-agree {
+    		background-color: white;
+    	}
     	
     	#signup-box form .h-captcha {
-    		margin-top: 20px;
+    		margin-top: 10px;
     	}
     	
-    	#signup-box form input[type="submit"] {
-    		background-color: white;
-    		color: black;
-    		margin-top: 0;
-    	}
     	
     	
     	#signup-box form input[type="submit"]:hover {
     		border: solid 2px;
     	}
-    	
+
+    #signup-box-title {
+    	display: flex;
+    	flex-direction: column;
+    	align-items: center;
+    	text-align: center;
+    }
+#signup-box-title * {
+	margin-bottom: 0;
+}
+   
+    #signup-box-title p {
+    	width: 80%;
+    }
+    #signup-box-title .title {
+    	font-weight: 500;
+    	width: unset;
+    	font-size: 40px;
+    }
+    
+    @media (orientation: landscape){
+    	#signup-box {
+    		width: 500px;
+    	}
+    }
     	</style>
   </head>
   <body>
   	<div id="signup-box-container">
   	<div id="signup-box">
   		
-  		<div id="signup-box-title"></div>
-    <form action="" method="POST">
+  		<div id="signup-box-title">
+  			<p class="title">Create a Nefomemes Network account</p>
+  			
+  			<p>After this, you should be able to log in to most of my projects. </p>
+  		</div>
+    <form action="" method="POST" autocomplete='off'>
     	<input type="text" name="username" placeholder=" Username"/>
       <input type="text" name="email" placeholder=" Email" />
+      
       <input type="password" name="password" placeholder=" Password" />
 <div class="h-captcha" data-sitekey="c63b68f7-ec57-4d5f-9eb1-81c20b960f62"></div>
-      <br />
-      <input type="submit" value="Submit" />
+     
+      <div>
+      <input type="checkbox" id="tos-privacy-agree"/>
+      </div>
+      <input type="submit" value="Create an account" />
       
     </form>
     </div>
     </div>
+<script src="//cdn.jsdelivr.net/npm/eruda"></script>
+<script>eruda.init();</script>
   </body>
 </html>
