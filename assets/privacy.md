@@ -18,7 +18,7 @@ We use information collected from our users to administer their Nefomemes Networ
 
 The site will also log the user's IP address, and the URL the user is visiting, for security purposes. These informations are private and will be immediately deleted when the server process was killed/stopped, this includes during maintenances, outages, server restarts, etc.
 
-# How We Share information
+## How We Share information
 
 We share some user data with third-party sites and services that have been granted permission by the user to access some of their information. The user can revoke their permission at any time.
 
