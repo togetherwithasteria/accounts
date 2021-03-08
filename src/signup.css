@@ -1,0 +1,87 @@
+
+
+body {
+	
+            margin: 0 0 0 0;
+        }
+ 
+        #signup-box-container {
+ 
+            display: flex;
+            background-image: url("/assets/chernobyl.jpg");
+            background-size: cover;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100vw;
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
+ 
+        #signup-box {
+            width: 480px;
+            height: auto;
+            
+            background-color: white;
+        }
+ 
+        #signup-box form {
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 40px;
+        }
+ 
+        #signup-box form input {
+            width: calc(100% - 40px);
+            height: 40px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: solid 1px;
+            background-color: white;
+ 
+        }
+ 
+        #tos-privacy-agree {
+            background-color: white;
+        }
+ 
+        #signup-box form .h-captcha {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+ 
+ 
+ 
+        #signup-box form input[type="submit"]:hover {
+            border: solid 2px;
+        }
+ 
+        #signup-box-title {
+            display: flex;
+            font-family: "Times New Roman";
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+ 
+        #signup-box-title * {
+            margin-bottom: 0;
+        }
+ 
+        #signup-box-title p {
+            width: 80%;
+        }
+ 
+        #signup-box-title .title {
+            font-weight: 500;
+            width: unset;
+            font-size: 40px;
+        }
+ 
+        @media (orientation: landscape) {
+            #signup-box {
+                width: 480px;
+            }
+        }
