@@ -1,7 +1,9 @@
 
 
 body {
-            background-image: url("/assets/bg.jpg");
+            background-color: 
+
+ #1a1a1a;
             
             background-size:  auto 120%;
             
@@ -24,11 +26,14 @@ body {
         }
  
         #signup-box {
-            width: 480px;
+            width: 470px;
             height: auto;
-            
+            padding-left: 5px;
+            padding-right: 5px;
             background-color: white;
         }
+ 
+
  
         #signup-box form {
             position: relative;
@@ -45,6 +50,10 @@ body {
             border-radius: 5px;
             border: solid 1px;
             background-color: white;
+            
+            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
  
         }
  
@@ -57,11 +66,15 @@ body {
             margin-bottom: 20px;
         }
  
- 
+       #signup-box form inout[type="submit"] {
+       	margin-bottom: 20px;
+       }
  
         #signup-box form input[type="submit"]:hover {
             border: solid 2px;
+            
         }
+        
  
         #signup-box-title {
             display: flex;
@@ -85,12 +98,23 @@ body {
             font-size: 40px;
         }
  
+ 
+ #signup-box form .error {
+ 	display: none;
+ 	color: red;
+ 	
+ text-align: center !important;
+ 
+ 	margin-top: 5px;
+ 	margin-bottom: 5px;
+ }
+ 
         @media (orientation: landscape) {
             #signup-box {
                 width: 480px;
             }
             
             body {
-             ;
+             
             }
         }

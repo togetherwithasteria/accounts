@@ -24,23 +24,26 @@
             </div>
             <form action="" method="POST" autocomplete='off'>
             	<p class="error" id="username-error"></p>
-                <input type="text" name="username" placeholder=" Username" />
-                <p class="error" name="">
-                <input type="text" name="email" placeholder=" Email" />
- 
-                <input type="password" name="password" placeholder=" Password" />
+                <input id="username-input" type="text" name="username" placeholder=" Username" />
+                <p class="error" id="email-error"></p>
+              
+                <input id="email-input" type="email" name="email" placeholder=" Email" />
+ <p class="error" id="password-error"></p>
+                <input type="password" id="password-input" name="password" placeholder=" Password" />
+                <p class="error" id="captcha-error"></p>
                 <div class="h-captcha" data-sitekey="c63b68f7-ec57-4d5f-9eb1-81c20b960f62"></div>
  
                 <div>
 
-<p>
-      <label>
-      	
-        <input type="checkbox" />
+
+      <label id="agree-with-policy-container">
+      	<p class="error" id="agree-error"></p>
+
+        <input type="checkbox" name="agree-with-policy" />
         <span>I agree with the site's <a href="https://github.com/Nefomemes/accounts/blob/master/src/assets/privacy.md">Privacy Policy</a>
         </span>
       </label>
-    </p>
+    
                 </div>
                 <input type="submit" value="Create an account" />
  <p>Already have an account? <a href="/login">Log in</a></p>
@@ -61,7 +64,15 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <script src="/assets/js/pwd-check.js">
+    	
+    </script>
             
+            
+            <script src="/signup.js">
+            	
+            </script>
 </body>
  
 </html>
