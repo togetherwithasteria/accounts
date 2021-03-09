@@ -78,11 +78,11 @@ function requireHTTPS(req, res, next) {
 
 		
 			})
-app.get('/signup', (req, res) => {
-	res.sendFile(path.join(__dirname, 'signup.html'))
-})
 
-app.use('/', express.static(__dirname));
+
+app.use('/', express.static(__dirname, {
+extensions: ['html']
+}));
 	app.all("*", (req, res) => res.send({
 		status: "error",
 		code: 404,

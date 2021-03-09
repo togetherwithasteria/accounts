@@ -11,6 +11,9 @@
 </head>
  
 <body>
+	
+	
+	
     <div id="signup-box-container">
         <div id="signup-box">
  
@@ -20,7 +23,9 @@
                 <p>After this, you should be able to log in to most of my projects. </p>
             </div>
             <form action="" method="POST" autocomplete='off'>
+            	<p class="error" id="username-error"></p>
                 <input type="text" name="username" placeholder=" Username" />
+                <p class="error" name="">
                 <input type="text" name="email" placeholder=" Email" />
  
                 <input type="password" name="password" placeholder=" Password" />
@@ -30,14 +35,17 @@
 
 <p>
       <label>
+      	
         <input type="checkbox" />
-        <span>I agree with the site's <a href="</span>
+        <span>I agree with the site's <a href="https://github.com/Nefomemes/accounts/blob/master/src/assets/privacy.md">Privacy Policy</a>
+        </span>
       </label>
     </p>
                 </div>
                 <input type="submit" value="Create an account" />
- 
+ <p>Already have an account? <a href="/login">Log in</a></p>
             </form>
+
         </div>
     </div>
     <script src="//cdn.jsdelivr.net/npm/eruda"></script>
