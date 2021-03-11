@@ -1,7 +1,10 @@
 (async function() {
 
 	process.on("error", (error) => console.error(error));
-        const path = require("path")
+	
+	
+	const slowDown = require("express-slow-down");
+        const path = require("path");
 	const express = require("express");
 	const MongoClient = require('mongodb').MongoClient;
 	const axios = require("axios");
@@ -15,16 +18,31 @@
 	await client.connect();
 
 	const accounts = client.db("main").collection("accounts");
+	
+	
 function requireHTTPS(req, res, next) {
-  // The 'x-forwarded-proto' check is for Heroku
+  // The 'x-forwarded-proto' check is for reverse proxies
   if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV !== "development") {
     return res.redirect('https://' + req.get('host') + req.url);
   }
   next();
 }
-	
+	app.enable("trust proxy"); // only if you're behind a reverse proxy (Heroku, Bluemix, AWS if you use an ELB, custom Nginx setup, etc)
 
-	// Needed to identify spammers
+const speedLimiter = slowDown({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  delayAfter: 100, // allow 100 requests per 15 minutes, then...
+  delayMs: 500 // begin adding 500ms of delay per request above 100:
+  // request # 101 is delayed by  500ms
+  // request # 102 is delayed by 1000ms
+  // request # 103 is delayed by 1500ms
+  // etc.
+});
+
+//  apply to all requests
+app.use(speedLimiter);
+
+	
 	function handleError(req, res, next){
 		try {
 
@@ -37,14 +55,44 @@ function requireHTTPS(req, res, next) {
 				error: JSON.parse(JSON.stringify(e))
 			})
 		}
-	}
+	}/*
 	function logIP(req, res, next) {
 		console.log(`${req.ip} - ${Date.now()} - ${req.method} ${req.url}`);
 		return next();
 	}
-
+*/
 	app.use(requireHTTPS);
-	app.use(logIP);
+	/*app.use(logIP);*/
+
+  app.post('/signup', (req, res) => {
+ 
+  })
+
+app.get('/api/userExist', async (req, res) => {
+	if(!req.query.user){
+		return res.status(400).send({
+		status: 'error',
+		code: 400,
+		message: 'Bad request',
+                friendlyMessage: 'Add the username to the \'user\' URL parameter then we can talk.'
+	})
+	}
+	
+	var user = await accounts.findOne({'username': req.query.user});
+	
+	
+		return res.status(200).send({
+			status: 'success',
+			code: 200,
+			message: 'OK',
+			data: {
+			
+				userExisted: (user ? true : false)
+			}
+			
+		})
+
+})
 
 	app.get("/callback/github/redirect-to/:url/", async (req, res) => {
 		try {
@@ -87,7 +135,7 @@ extensions: ['html']
 		status: "error",
 		code: 404,
 		message: "Not found",
-		informalMessage: "You found yourself in an unknown place."
+		friendlyMessage: "You found yourself in an unknown place."
 	}))
 
 	app.listen(3000, (o) => console.log("Server started"))
