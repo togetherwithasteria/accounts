@@ -6,7 +6,7 @@ These projects are under their own terms, lisences, and privacy policies, if the
 
 ## Information We Collect
 
-When a user is signing up for an account. We collect infomation that can be used to identify or contact the user, such as email address and username.
+When a user is signing up for an account. We collect infomation that can be used to identify or contact the user, such as email address and username. 
 
 The user can grant the site permissions to access the user's account from third-party websites and services that the site have supported. The user can revoke the permission at any time.
 
