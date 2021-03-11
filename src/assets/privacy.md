@@ -24,6 +24,8 @@ We share some user data with third-party sites and services that have been grant
 
 We share user data, as necessary to comply with applicable laws, including governmental requests and law enforcement requests.
 
+## How We Secure
+We implement and use appropriate security measures to protect the information we collect and store. There are no system that are 100% proof to security breaches however, so there is still a high chance our system getting breached, but at least we have done our best and we will do our best to protect the information we collect and store.
 
 ## Code Transparancy
 
@@ -33,4 +35,4 @@ While this document may not be the best at documenting how we protect user priva
 
 ## Changes To This Document
 
-This document is incomplete. However, in the future we will add changes to this document to comply with applicable laws. 
+This document is incomplete. We will add changes to this document to comply with applicable laws. And we wil add changes from time to time if needed.
