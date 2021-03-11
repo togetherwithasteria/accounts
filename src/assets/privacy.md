@@ -14,20 +14,23 @@ Due to how the web works, web browsers automatically send some informations abou
 
 ## How We Use Information
 
-We use information collected from our users to administer their Nefomemes Network accounts. 
+We use information collected from our users for the following cases.
 
-We also use information collected from our users to provide a better experience for them in some other projects made by Nefomemes. That's exactly why this site was made.
+- To administer users' Nefomemes Network accounts. 
+
+- To provide a better experience for users in first-party sites and services. That's exactly why this site was made btw.
 
 ## How We Share information
 ---
 
 Note: This is not in effect yet.
 
-We share some user data with third-party sites and services that have been granted permission by the user to access some of their information. The user can revoke their permission at any time.
+We will share some user data with third-party sites and services that have been granted permission by the user to access some of their information. The user can revoke their permission at any time.
 
 ---
 
-We share user data, as necessary to comply with applicable laws, including governmental requests and law enforcement requests.
+
+We will share information as necessary to comply with applicable laws, including governmental requests and law enforcement requests.
 
 ## How We Secure Information
 We implement and use appropriate security measures to protect the information we collect and store. There are no system that are 100% proof to security breaches however, so there is still a high chance our system getting breached, but at least we have done our best and we will do our best to protect the information we collect and store.
