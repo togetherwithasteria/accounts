@@ -35,6 +35,8 @@ We will share information as necessary to comply with applicable laws, including
 ## How We Secure Information
 We implement and use appropriate security measures to protect the information we collect and store. There are no system that are 100% proof to security breaches however, so there is still a high chance our system getting breached, but at least we have done our best and we will do our best to protect the information we collect and store.
 
+## Contact Information
+
 ## Code Transparancy
 
 The site is fully open source and transparent. It's source code is publicly available on [GitHub](https://github.com/Nefomemes/accounts) and [Replit](https://repl.it/@Nefomemes/accounts).
