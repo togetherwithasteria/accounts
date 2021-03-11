@@ -16,6 +16,8 @@ Due to how the web works, web browsers automatically send some informations abou
 
 We use information collected from our users to administer their Nefomemes Network accounts. 
 
+We use information collected from our users to provide a better 
+
 ## How We Share information
 
 We share some user data with third-party sites and services that have been granted permission by the user to access some of their information. The user can revoke their permission at any time.
