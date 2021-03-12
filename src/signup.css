@@ -62,9 +62,11 @@ body {
         }
  
         #signup-box form .h-captcha {
-            margin-top: 30px;
+            margin-top: 20px;
             margin-bottom: 20px;
         }
+        
+        
  
        #signup-box form input[type="submit"] {
        	margin-top: 20px !important;
